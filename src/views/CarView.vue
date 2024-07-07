@@ -13,19 +13,27 @@
           <div class="user_info__city"></div>
         </div>
       </div>
+    </div>
       
       <div class="car_posts">
-        
+        <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <PostCard v-for="post in posts" :post="post" :key="post.id"></PostCard>
+      </div>  
+    </div>    
+  </div>
       </div>
-    </div>
 </template>
 
 <script>
   import UserTag from '@/components/UserTag.vue'
+  import PostCard from '@/components/PostCard.vue'
 
   export default {
     name: 'CarView',
     components: {
+      PostCard,
       UserTag
     },
     data(){
@@ -312,5 +320,4 @@
   .user_info__city {
     color: rgb(165, 165, 165);
   }
-
 </style>
