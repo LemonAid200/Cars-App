@@ -1,14 +1,8 @@
 import { createStore } from 'vuex'
+import { carsModule } from './carsModule'
 
 export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
   modules: {
+    carsList: carsModule
   }
 })
