@@ -304,7 +304,9 @@
     margin: 0 auto;
     width: fit-content;
   }
-
+  .car img {
+    max-width: 500px;
+  }
   .user {
     margin: 10px;
   }
