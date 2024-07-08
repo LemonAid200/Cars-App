@@ -943,10 +943,10 @@ export const carsModule = {
            ],
            "engine": "2.5"
          }
-             ]
+        ]
     }),
     getters: {
-
+      
     },
     mutations: {
       setCarsList(state, carsList){

@@ -4,7 +4,7 @@ import { postsModule } from './postsModule'
 
 export default createStore({
   modules: {
-    carsList: carsModule,
-    postsList: postsModule
+    cars: carsModule,
+    posts: postsModule
   }
 })
