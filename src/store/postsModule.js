@@ -183,23 +183,24 @@ export const postsModule = {
                 "main_auto_name": "Volkswagen Tiguan"
               }
             }
-        ],
+        ]
     }),
     mutations: {
-      // setPostsList(state, carsList){
-      //   state.carsList = carsList
-      //   console.log('setCarsList')
-      // }
+      setPostsList(state, postsList){
+        state.postsList = postsList
+        console.log('setPostsList')
+      }
     },
     actions: {
-    //   async fetchPostsList({state, commit}){
-    //     try {
-    //       const response = await axios.get('http://am111.05.testing.place/api/v1/cars/list')
-    //       console.log(response, 'Hello world')
-    //       commit('setCarsList', response.data)
-    //     } catch (e) {
-    //       console.error(e)
-    //     }
-    //   }
-    }
+      // async fetchPostsList({state, commit}){
+      //   try {
+      //     const response = await axios.get('http://am111.05.testing.place/api/v1/cars/list')
+      //     console.log(response, 'Hello world')
+      //     commit('setCarsList', response.data)
+      //   } catch (e) {
+      //     console.error(e)
+      //   }
+      // }
+    },
+    namespaced: true
 }

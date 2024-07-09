@@ -24,11 +24,7 @@ export default {
     })
   },
   mounted() {
-    console.log('mounted')
     this.fetchCarsList()
   }
 }
 </script>
-<style scooped>
-
-</style>
