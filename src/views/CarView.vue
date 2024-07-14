@@ -57,7 +57,7 @@
       ...mapActions({
         fetchCar: 'cars/fetchCar',
         fetchPosts: 'posts/fetchPostsList'
-      })
+      }),
     },
     mounted(){
       this.fetchCar(this.carId)
