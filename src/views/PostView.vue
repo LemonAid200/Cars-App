@@ -34,7 +34,7 @@
     },
     data() {
       return {
-        postId: 564
+        postId: 563
       }
     },
     methods: {
@@ -43,7 +43,12 @@
       })
     },
     mounted(){
-      this.fetchPost(this.postId)
+      if (this.$route.params.id){
+        this.postId = this.$route.params.id
+        this.fetchPost(this.postId)
+      } else if (Object.keys(this.$store.state.posts.postData).length === 0){
+        this.fetchPost(this.postId)
+      }
     }
   }
 </script>

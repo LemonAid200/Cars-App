@@ -7,7 +7,11 @@
             <p class="card-text">    {{ post.text }}  </p>
             <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button 
+                        type="button" 
+                        class="btn btn-sm btn-outline-secondary"
+                        @click="$emit('viewPost')"
+                    >View</button>
                 </div>
                 <small class="text-muted">{{ post.date }}</small>
             </div>

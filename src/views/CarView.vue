@@ -20,7 +20,7 @@
         <div class="album py-5 bg-light">
           <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-              <PostCard v-for="post in $store.state.posts.postsList.posts" :post="post" :key="post.id"></PostCard>
+              <PostCard v-for="post in $store.state.posts.postsList.posts" :post="post" @viewPost="goToPost(post.id)" :key="post.id"></PostCard>
             </div>  
           </div>    
         </div>
@@ -42,7 +42,7 @@
     },
     data(){
       return {
-        carId: 19,
+        carId: 49,
       }
     },
     computed: {
@@ -58,10 +58,20 @@
         fetchCar: 'cars/fetchCar',
         fetchPosts: 'posts/fetchPostsList'
       }),
+      goToPost(id){
+        this.$router.push({name: 'post', params: { id: id }})
+
+      }
     },
     mounted(){
-      this.fetchCar(this.carId)
-      this.fetchPosts(this.carId)
+      if (this.$route.params.id && this.$route.params.id != this.carId){
+        this.carId = this.$route.params.id
+        this.fetchCar(this.carId)
+        this.fetchPosts(this.carId)
+      } else if (Object.keys(this.$store.state.cars.carData).length === 0){
+        this.fetchCar(this.carId)
+        this.fetchPosts(this.carId)
+      }
     }
   }
 

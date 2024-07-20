@@ -2,7 +2,7 @@
   <div class="album py-5 bg-light">
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <CarCard v-for="car in $store.state.cars.carsList" :car="car" :key="car.id"></CarCard>
+        <CarCard v-for="car in $store.state.cars.carsList" :car="car" @viewCar="goToCar(car.id)" :key="car.id"></CarCard>
       </div>  
     </div>    
   </div>
@@ -21,10 +21,15 @@ export default {
   methods: {
     ...mapActions({
       fetchCarsList: 'cars/fetchCarsList'
-    })
+    }),
+    goToCar(id){
+      this.$router.push({name: 'car', params: { id: id }})
+    }
   },
   mounted() {
-    this.fetchCarsList()
+    if (this.$store.state.cars.carsList.length === 0){
+      this.fetchCarsList()
+    }
   }
 }
 </script>

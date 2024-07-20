@@ -7,7 +7,11 @@
         <p class="card-text">    {{ car.brand_name }}  {{ car.model_name }}</p>
         <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                <button 
+                    type="button" 
+                    class="btn btn-sm btn-outline-secondary"
+                    @click="$emit('viewCar')"
+                >View</button>
             </div>
             <small class="text-muted">{{ car.year}}</small>
         </div>
