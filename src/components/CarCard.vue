@@ -30,9 +30,3 @@ export default {
     }
 }
 </script>
-
-<style scooped>
-    .card-text{
-        height: 65px;
-    }
-</style>
