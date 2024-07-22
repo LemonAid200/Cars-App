@@ -40,7 +40,6 @@ export const carsModule = {
         try {
           const response = await axios.get(`https://am111.05.testing.place/api/v1/car/${id}`)
           commit('setCarData', response.data)
-          console.log(response.data)
         } catch (e){
           console.error(e)
         }
