@@ -30,7 +30,7 @@ export const carsModule = {
     actions: {
       async fetchCarsList({ state, commit }){
         try {
-          const response = await axios.get('http://am111.05.testing.place/api/v1/cars/list')
+          const response = await axios.get('https://am111.05.testing.place/api/v1/cars/list')
           commit('setCarsList', response.data)
         } catch (e) {
           console.error(e)
@@ -38,9 +38,8 @@ export const carsModule = {
       },
       async fetchCar({ state, commit }, id){
         try {
-          const response = await axios.get(`http://am111.05.testing.place/api/v1/car/${id}`)
+          const response = await axios.get(`https://am111.05.testing.place/api/v1/car/${id}`)
           commit('setCarData', response.data)
-          console.log(response.data)
         } catch (e){
           console.error(e)
         }
