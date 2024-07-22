@@ -18,7 +18,7 @@ export const postsModule = {
     actions: {
       async fetchPostsList({commit}, id){
         try {
-          const response = await axios.get(`http://am111.05.testing.place/api/v1/car/${id}/posts`)
+          const response = await axios.get(`https://am111.05.testing.place/api/v1/car/${id}/posts`)
           console.log(response.data, 'fetching posts')
           commit('setPostsList', response.data)
         } catch (e) {
@@ -27,7 +27,7 @@ export const postsModule = {
       },
       async fetchPost({commit}, id){
         try {
-          const response = await axios.get(`http://am111.05.testing.place/api/v1/post/${id}`)
+          const response = await axios.get(`https://am111.05.testing.place/api/v1/post/${id}`)
           console.log(response.data, 'fetching POST')
           commit('setPostData', response.data)
         } catch (e) {
