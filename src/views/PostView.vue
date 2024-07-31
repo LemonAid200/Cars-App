@@ -1,7 +1,7 @@
 <template>
   <div class="post" v-if="Object.keys($store.state.posts.postData).length !== 0">
     <h2>{{ $store.state.posts.postData.post.user.main_auto_name }}</h2>
-    <img :src="$store.state.posts.postData.post.img" alt="">    
+    <img class="post-img" :src="$store.state.posts.postData.post.img" alt="">    
 
     <div class="user">
       <UserTag :imgUrl="$store.state.posts.postData.post.user.avatar.url" :userName="$store.state.posts.postData.post.user.username" :carName="$store.state.posts.postData.post.user.main_auto_name"></UserTag>
@@ -57,7 +57,7 @@
   .post{
     margin: 0 auto;
     max-width: 500px;
-    width: fit-content;
+    /* width: fit-content;   */
   }
 
   .post_text{
@@ -66,7 +66,8 @@
     margin-top: 10px;
   }
 
-  .post img {
+  .post-img {
+    width: 100%;
     max-width: 500px;
   }
   .user {
